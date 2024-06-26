@@ -2,12 +2,16 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from 'mongoose';
 
+
 const app=express();
 const port=3200;
+// const port = process.env.PORT || 3200;
 
 app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
+
+// const mongoURI = process.env.MONGODB_URI;
 
 mongoose.connect('mongodb+srv://yashgodwal:porsche911@cluster0.k7ybm4v.mongodb.net/mydb',{
     useNewUrlParser:true,
